@@ -14,11 +14,11 @@ export const PrivateRoute = ({ isAuth }) => {
             <User path='/user' />
           </React.Fragment>
         ) : (
-            <React.Fragment>
-              <NotRegisteredUser path='/favs' />
-              <NotRegisteredUser path='/user' />
-            </React.Fragment>
-          )
+          <React.Fragment>
+            <NotRegisteredUser path='/favs' />
+            <NotRegisteredUser path='/user' />
+          </React.Fragment>
+        )
       }
     </Router>
   )

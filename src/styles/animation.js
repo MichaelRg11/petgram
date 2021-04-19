@@ -15,7 +15,7 @@ const fadeInKeyFrames = keyframes`
 
 export const fadeIn = ({ time = '1s', type = 'ease' } = {}) => css`animation: ${time} ${fadeInKeyFrames} ${type}`
 
-// pequeño rebote 
+// pequeño rebote
 const bounceDownKeyFrames = keyframes`
  0% {
     top: -70px;

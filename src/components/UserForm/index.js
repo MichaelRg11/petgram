@@ -1,23 +1,35 @@
 import React from 'react'
 import { useInputValue } from './../../hooks/useInputValue'
-import { Form, Input, Button, Title, Label, Svg } from './style'
+import { Content, Form, Input, Button, Title, Label, Logo, Text, Error } from './style'
+import { LogoLogin } from './../Logo'
 
-export const UserForm = ({ onSubmit, title }) => {
+export const UserForm = ({ onSubmit, error, disabled, title, login, onClick, message }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
+  const handleChange = (event) => {
+    event.preventDefault()
+    onSubmit({ email: email.value, password: password.value })
+  }
+
   return (
     <React.Fragment>
-      <Svg />
-      <Title>{title}</Title>
-      <Form onSubmit={onSubmit}>
-        <Label>Email</Label>
-        <Input placeholder='Email' {...email} />
-        <Label>Contraseña</Label>
-        <Input placeholder='Password' type='password' {...password} />
-        <Button>{title}</Button>
-      </Form>
+      <Content login={login}>
+
+        <Form onSubmit={handleChange} disabled={disabled}>
+          <Logo>
+            <LogoLogin />
+          </Logo>
+          <Title>{title}</Title>
+          <Label>Email</Label>
+          <Input placeholder='Email' {...email} disabled={disabled} />
+          <Label>Contraseña</Label>
+          <Input placeholder='Password' type='password' {...password} disabled={disabled} />
+          <Button disabled={disabled}>{title}</Button>
+          <Text onClick={onClick}>{message}</Text>
+        </Form>
+        {error && <Error>{error}</Error>}
+      </Content>
     </React.Fragment>
   )
 }
-

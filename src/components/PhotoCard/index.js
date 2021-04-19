@@ -13,7 +13,7 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAUL_IMAGE }) => {
   const [liked, setLiked] = useLocalStorage(key, false)
   const [show, ref] = useNearScreen()
 
-  const { mutation, mutationLoading, mutationError } = useMuationToogleLike()
+  const { mutation } = useMuationToogleLike()
   const handleFavClick = () => {
     !liked && mutation({
       variables: {

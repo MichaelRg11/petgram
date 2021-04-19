@@ -4,7 +4,7 @@ import { Loading } from './../../styles/animation'
 import { useGetPhotos } from '../../container/useGetPhotos'
 
 export const ListOfPhotoCards = ({ categoryId }) => {
-  const { loading, error, data } = useGetPhotos(categoryId);
+  const { loading, error, data } = useGetPhotos(categoryId)
 
   if (loading) return <Loading />
 

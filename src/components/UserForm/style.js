@@ -1,8 +1,17 @@
 import styled from 'styled-components'
-import { LogoLogin } from './../Logo'
+import { fadeIn } from './../../styles/animation'
 
-export const Svg = styled(LogoLogin)`
-  width: 200px;
+export const Content = styled.div`
+  transition: 1s;
+  display: ${props => props.login ? 'none' : 'block'};
+  ${fadeIn({ time: '2s' })}
+`
+
+export const Logo = styled.div`
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  display: flex;
 `
 
 export const Title = styled.h2`
@@ -43,4 +52,29 @@ export const Button = styled.button`
   max-width: 350px;
   width: 100%;
   text-align: center;
+  cursor: pointer;
+  
+  &[disabled] {
+    opacity: .3;
+  }
+`
+
+export const Text = styled.p`
+  margin-top: 30px;
+  text-align: center;
+  color: #fb3570;
+  cursor: pointer;
+`
+
+export const Error = styled.span`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(251,53,112,0.5);
+    margin: 0 auto;
+    width: 350px;
+    min-height: 40px;
+    padding: 5px 10px;
+    border-radius: 10px;
 `

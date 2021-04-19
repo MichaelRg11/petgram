@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { bounceDown, appearFromTop } from './../../styles/animation'
+import { bounceDown } from './../../styles/animation'
 
 export const List = styled.ul`
   display: flex;

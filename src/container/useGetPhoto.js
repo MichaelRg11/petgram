@@ -11,8 +11,6 @@ const renderProps = ({ loading, error, data }) => {
 
   const { photo = {} } = data
   return <PhotoCard {...photo} />
-
-
 }
 
 export const PhotoCardWithQuery = ({ id }) => (
